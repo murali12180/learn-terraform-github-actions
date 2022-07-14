@@ -156,7 +156,7 @@ resource "random_pet" "sg" {}
 
 
 
-# permission set example - perm set only 1
+# permission set example - bucket test1
 
 data "aws_ssoadmin_instances" "example" {}
 
@@ -175,7 +175,8 @@ data "aws_iam_policy_document" "example" {
       "s3:CreateBucket",
       "s3:DeleteBucket",
       "s3:GetBucketLocation",
-      "s3:PutBucketOwnershipControls"
+      "s3:PutBucketOwnershipControls",
+      "s3:GetObject"
     ]
 
     resources = [
@@ -189,6 +190,24 @@ resource "aws_ssoadmin_permission_set_inline_policy" "example" {
   instance_arn       = aws_ssoadmin_permission_set.example.instance_arn
   permission_set_arn = aws_ssoadmin_permission_set.example.arn
 }
+
+resource "aws_ssoadmin_managed_policy_attachment" "example" {
+  instance_arn       = data.aws_iam_policy_document.example.json
+  managed_policy_arn = "arn:aws:iam::aws:policy/AWSLambda_FullAccess"
+  permission_set_arn = aws_ssoadmin_permission_set.example.arn
+}
+
+#  managed_policy_arn = "arn:aws:iam::aws:policy/AWSLambda_FullAccess, arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess, arn:aws:iam::aws:policy/AmazonEC2FullAccess, arn:aws:iam::aws:policy/AmazonS3FullAccess, arn:aws:iam::aws:policy/CloudWatchFullAccess"
+
+
+
+#
+#AWSLambda_FullAccess
+#AWSCloudTrailReadOnlyAccess
+#AmazonEC2FullAccess
+#AmazonS3FullAccess
+#cloudwatch:* full access
+
 
 #output "web-address" {
 #  value = "${aws_instance.web.public_dns}:8080"
