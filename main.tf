@@ -156,7 +156,8 @@ resource "random_pet" "sg" {}
 
 variable "permsets" {
   default = [
-    "arn:aws:iam::aws:policy/AWSLambda_FullAccess"
+    "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
+    "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess"
   ]
 }
 
