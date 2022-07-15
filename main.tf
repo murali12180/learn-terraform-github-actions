@@ -157,7 +157,10 @@ resource "random_pet" "sg" {}
 variable "permsets" {
   default = [
     "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
-    "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess"
+    "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess",
+    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+    "arn:aws:iam::aws:policy/CloudWatchFullAccess"
   ]
 }
 
@@ -228,6 +231,8 @@ resource "aws_ssoadmin_managed_policy_attachment" "example" {
 #}
 
 #  managed_policy_arn = ["arn:aws:iam::aws:policy/AWSLambda_FullAccess", "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess"], arn:aws:iam::aws:policy/AmazonEC2FullAccess, arn:aws:iam::aws:policy/AmazonS3FullAccess, arn:aws:iam::aws:policy/CloudWatchFullAccess"]
+
+
 
 
 
