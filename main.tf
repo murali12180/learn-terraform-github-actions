@@ -165,7 +165,7 @@ variable "permsets" {
 }
 
 
-# permission set example - bucket test1
+# permission set example - bucket
 
 data "aws_ssoadmin_instances" "example" {}
 
