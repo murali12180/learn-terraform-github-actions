@@ -215,7 +215,7 @@ resource "aws_ssoadmin_managed_policy_attachment" "example" {
   permission_set_arn = aws_ssoadmin_permission_set.example.arn
 }
 
-# managed policies variable test3
+# managed policies variable check all pol
 
 #resource "aws_ssoadmin_managed_policy_attachment" "example" {
 #  for_each           = toset(["arn:aws:iam::aws:policy/AWSLambda_FullAccess","arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess"])
