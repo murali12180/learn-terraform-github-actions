@@ -191,9 +191,9 @@ resource "aws_ssoadmin_permission_set_inline_policy" "example" {
   permission_set_arn = aws_ssoadmin_permission_set.example.arn
 }
 
-# managed policies
+# managed policies 1
 resource "aws_ssoadmin_managed_policy_attachment" "example" {
-  for_each           = toset(["arn:aws:iam::aws:policy/AWSLambda_FullAccess", "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess"])
+  for_each           = toset(["arn:aws:iam::aws:policy/AWSLambda_FullAccess"])
   instance_arn       = tolist(data.aws_ssoadmin_instances.example.arns)[0]
   managed_policy_arn = each.value
   permission_set_arn = aws_ssoadmin_permission_set.example.arn
@@ -209,7 +209,7 @@ resource "aws_ssoadmin_managed_policy_attachment" "example" {
 
 
 
-# original code
+# original code1
 
 #AWSLambda_FullAccess
 #AWSCloudTrailReadOnlyAccess
