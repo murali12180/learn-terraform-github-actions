@@ -154,12 +154,21 @@ resource "random_pet" "sg" {}
 #  target_id = var.target_id
 #}
 
+#variable "permsets" {
+#  default = [
+#    "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
+#    "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess",
+##    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+##    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+#    "arn:aws:iam::aws:policy/CloudWatchFullAccess"
+#  ]
+#}
+
+
 variable "permsets" {
   default = [
     "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
     "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess",
-#    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
-#    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
     "arn:aws:iam::aws:policy/CloudWatchFullAccess"
   ]
 }
