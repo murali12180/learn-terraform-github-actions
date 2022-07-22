@@ -158,8 +158,8 @@ variable "permsets" {
   default = [
     "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
     "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess",
-    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+#    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+#    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
     "arn:aws:iam::aws:policy/CloudWatchFullAccess"
   ]
 }
